@@ -1,0 +1,36 @@
+<section id="profile">
+  <div class="p-5">
+    <h4 class="display-4">{{job}}</h4>
+    <hr>
+    <div class="row mt-5">
+      <div class="col-md-3">
+        {{#if user.picture}}
+        <img src="../{{ user.picture }}" alt="userimage" class="image" style="width:70%">
+        {{else}}
+        <img src= "../../images/user.jpg" alt="{{user.fname}}'s image" class="image" style="width:70%">
+        {{/if}}
+      </div>
+      <div class="col-md-8 ml-3">
+        <p id="name" class="lead">{{ user.fname }} {{ user.lname }}</p>
+        <a href="/companyOwner/setting/{{ user._id}}" class="btn btn-warning">Change Account Settings</a>
+        <br>
+        <br>
+        <a href="/employees/projects" class="btn btn-warning">Projects</a>
+        <br>
+        <br>
+        <div>
+          <p class="lead">Reports & Tasks</p>
+          <hr>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <a routerLink="/profile/tasks" class="btn btn-outline-success btn-block">Tasks</a>
+            </div>
+            <div class="col-md-6">
+              <a routerLink="/profile/reports" class="btn btn-outline-info btn-block">Reports</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
